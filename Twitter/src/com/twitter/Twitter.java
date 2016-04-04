@@ -30,11 +30,17 @@ public class Twitter {
 	 */
 	public void unesi(String korisnik, String poruka) {
 		// Pravi se nova poruka i puni podacima.
-		TwitterPoruka tp = new TwitterPoruka();
-		tp.setKorisnik("korisnik");
-		tp.setPoruka(poruka);
-		// Poruka se unosi u listu na kraj
-		poruke.addLast(tp);
+		try{
+			TwitterPoruka tp = new TwitterPoruka();
+			tp.setKorisnik(korisnik);//otklonjena greska, sada baca exception kada je korisnik null
+			tp.setPoruka(poruka);
+			// Poruka se unosi u listu na kraj
+			poruke.addLast(tp);
+			}catch(RuntimeException e){
+				throw e;
+			}
+		
+		
 	}
 
 	/**
@@ -62,11 +68,11 @@ public class Twitter {
 		// se prekida.
 		for (int i = 0; i < poruke.size(); i++)
 			if (poruke.get(i).getPoruka().indexOf(tag) != -1)
-				if (brojac < maxBroj) {
-					rezultat[brojac + 1] = poruke.get(i);
+				if (brojac < maxBroj-1) {
+					rezultat[brojac] = poruke.get(i);//rezultat[brojac + 1], baca ArrayIndexOutOfBoundsException
 					brojac++;
-				} else
-					break;
+				}else
+					break; 
 		return rezultat;
 	}
 }
