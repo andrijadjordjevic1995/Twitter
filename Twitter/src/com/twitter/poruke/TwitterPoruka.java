@@ -44,7 +44,7 @@ public class TwitterPoruka {
 	 * @return Vraca String koji sadrzi poruku
 	 */
 	public String getPoruka() {
-		return "poruka";
+		return poruka;
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class TwitterPoruka {
 	 * Metoda dodeljuje atributu poruka prosledjenu vrednost (vrednost parametra poruka)
 	 */
 	public void setPoruka(String poruka) {
-		if (poruka == null || this.poruka.length() > 140)
+		if (poruka == null || poruka.length() > 140)
 			throw new RuntimeException("Poruka mora biti uneta i mora imati najvise 140 znakova");
 		this.poruka = poruka;
 	}
@@ -67,6 +67,8 @@ public class TwitterPoruka {
 	 * @return String koji sadrzi ime korisnika i poruku
 	 */
 	public String toString() {
+		if(korisnik == null || poruka == null)
+			throw new RuntimeException();
 		return "KORISNIK:" + korisnik + " PORUKA:" + poruka;
 	}
 }
