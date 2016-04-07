@@ -4,6 +4,9 @@ package com.twitter.poruke;
  * 
  * @author Andrija Djordjevic
  * @version 0.1 prva verzija klase TwitterPoruka
+ * 
+ * Klasa cije instance predstavljaju jednu twitter poruku. 
+ * Sadrzi ime korisnika kao i poruku koju je on uneo.
  *
  */
 public class TwitterPoruka {

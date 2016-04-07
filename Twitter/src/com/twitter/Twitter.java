@@ -6,7 +6,9 @@ import com.twitter.poruke.TwitterPoruka;
 /**
  * 
  * @author Andrija Djordjevic
- *
+ * Objekat klase twitter ce cuvati sve unete poruke(objekte klase TwitterPoruka). 
+ * Metode ove klase omogucavaju vracanje svih poruka, 
+ * unos nove poruke kao i pretragu poruka na osnovu unetog String-a.
  */
 public class Twitter {
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
